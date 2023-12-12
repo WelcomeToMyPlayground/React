@@ -1,0 +1,62 @@
+1.
+
+npm start
+-> 리액트 개발환경이 실행됨
+
+npm run build
+-> 배포판을 만드는 과정 -> build 폴더가 생김 
+-> build 안에 index.html 파일 생기는데 공백이 없음 -> 배포할 때 파일의 용량을 줄이기 위함
+
+npm test
+
+
+npm run eject
+
+
+---------------------------------------------------------------------------------------
+2. 
+
+. = 현재 디렉토리 
+dir = 폴더 및 파일명 확인
+---------------------------------------------------------------------------------------
+3.
+- src 폴더 안에 있는 index.js가 입구
+- index.js에는 여러가지 전역적인 설정들이 들어가있음
+
+[index.js]
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';    // (뒤에 App.js라는 확장자명이 생략됨)
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />            // 이 안에 App.js 의 내용이 들어감
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+---------------------------------------------------------------------------------------
+[App.js] -> 여기서 내용을 편집하면서 ui를 만들어가게됨 
+
+// import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      hello React
+    </div>
+  );
+}
+
+export default App;
+---------------------------------------------------------------------------------------
+4.
+리액트 = 사용자 정의 태그를 만드는 기술 
