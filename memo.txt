@@ -1,0 +1,92 @@
+React
+: 대표적인 자바스크립트 UI 라이브러리
+
+Node.js 
+: 쉽게 말해서 자바스크립트로 네트워크 애플리케이션을 개발할 수 있게 해주는 환경
+
+npm
+: node package manager 약자로 Node.js를 위한 패키지 매니저
+  
+- 패키지 매니저는 프로젝트에서 필요로 하는 다양한 외부 패키지들의 버전과 의존성을 관리하고 편하게 설치 및 삭제 할 수 있게 도와주는 역할을 함
+- npm은 Node.js를 설치하면 자동으로 함께 설치됨
+
+---------------------------------------------------------------------------------------
+
+npm start
+-> 리액트 개발환경 실행
+
+npm run build
+-> 배포판을 만드는 과정 -> build 폴더가 생김 
+-> build 안에 index.html 파일 생기는데 공백이 없음 -> 배포할 때 파일의 용량을 줄이기 위함
+
+npm test
+
+
+npm run eject
+
+
+---------------------------------------------------------------------------------------
+
+. = 현재 디렉토리 
+
+dir = 폴더 및 파일명 확인
+
+---------------------------------------------------------------------------------------
+
+- src 폴더 안에 있는 index.js가 입구
+- index.js에는 여러가지 전역적인 설정들이 들어가있음
+
+[index.js]
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';    // (뒤에 App.js라는 확장자명이 생략됨)
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />            // 이 안에 App.js 의 내용이 들어감
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+---------------------------------------------------------------------------------------
+
+[App.js] -> 여기서 내용을 편집하면서 ui를 만들어가게됨 
+
+// import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      hello React
+    </div>
+  );
+}
+
+export default App;
+
+---------------------------------------------------------------------------------------
+
+- 리액트 = 사용자 정의 태그를 만드는 기술 (=컴포넌트)
+- 리액트에서 사용자 정의 태그를 만들 때는 반드시 대문자로 시작해야함
+
+  function Header(){
+
+  }
+
+- 리액트는 속성을 PROP 이라고 부름
+- css 파일 쓰려면 상단에서 import 'css파일경로'; 
+
+5. JSX 문법
+- class 넣을 땐 className
+- 변수 넣을 땐 {변수명}
+- 데이터 바인딩은 {변수명}
+- style 직접 넣을 땐 style={{스타일명 : '값'}}
